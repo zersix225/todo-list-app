@@ -13,7 +13,7 @@ class _CardItemState extends State<CardItem> {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
+    return Padding( 
       padding: const EdgeInsets.only(right: 12),
       child: SizedBox(
         width: 260,
@@ -84,7 +84,10 @@ class _CardItemState extends State<CardItem> {
                   const SizedBox(width: 10),
                   const Text(
                     "01 November 2025",
-                    style: TextStyle(fontSize: 10, color: Colors.grey),
+                    style: TextStyle(
+                      fontSize: 10,
+                      color: Colors.grey,
+                    ),
                   ),
                   const Spacer(),
                   ShadBadge.destructive(
@@ -103,7 +106,10 @@ class _CardItemState extends State<CardItem> {
                 children: [
                   const Text(
                     "Progress",
-                    style: TextStyle(fontSize: 10, color: Colors.grey),
+                    style: TextStyle(
+                      fontSize: 10,
+                      color: Colors.grey,
+                    ),
                   ),
                   Text(
                     "${(progress * 100).round()}%",
@@ -120,7 +126,10 @@ class _CardItemState extends State<CardItem> {
 
               SizedBox(
                 height: 10,
-                child: ShadProgress(value: progress, color: Colors.blue),
+                child: ShadProgress(
+                  value: progress,
+                  color: Colors.blue,
+                ),
               ),
             ],
           ),

@@ -9,7 +9,6 @@ class CardScrollView extends StatefulWidget {
 }
 
 class _CardScrollViewState extends State<CardScrollView> {
-
   @override
   Widget build(BuildContext context) {
     return LayoutBuilder(
