@@ -8,58 +8,121 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final height = MediaQuery.of(context).size.height;
     return Scaffold(
-      backgroundColor:Colors.grey.shade200.withValues(alpha: 0.5),
-      body: SafeArea(
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 25),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Column(
+      backgroundColor: Colors.grey.shade200.withValues(alpha: 0.5),
+      body: Stack(
+        children: [
+          Container(
+            height: height * 0.2,
+            decoration: BoxDecoration(
+              color: Colors.yellow[600],
+              borderRadius: const BorderRadius.only(
+                bottomLeft: Radius.circular(45),
+                bottomRight: Radius.circular(45),
+              ),
+            ),
+          ),
+          SafeArea(
+            child: Column(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(left: 20, right: 20, top: 20),
+                  child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
-                    children: const [
-                      Text(
-                        "Hi, Zara",
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 20,
+                    children: [
+                      Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 5),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Row(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                ShadAvatar(
+                                  'https://app.requestly.io/delay/2000/avatars.githubusercontent.com/u/124599?v=4',
+                                  placeholder: Text('CN'),
+                                  size: Size(50, 50),
+                                ),
+                                SizedBox(width: 15),
+                                Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: const [
+                                    Text(
+                                      "Hi, Zara",
+                                      style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 20,
+                                      ),
+                                    ),
+                                    SizedBox(height: 1),
+                                    Text(
+                                      "You have 5 targets",
+                                      style: TextStyle(
+                                        fontSize: 13,
+                                        color: Colors.black45,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ],
+                            ),
+                            Container(
+                              height: 45,
+                              width: 45,
+                              decoration: BoxDecoration(
+                                color: Colors.white,
+                                shape: BoxShape.circle,
+                              ),
+                              child: Center(
+                                  child: IconButton(
+                                    icon: const Icon(
+                                      Icons.notifications_active,
+                                      color: Colors.black,
+                                    ),
+                                    iconSize: 20,
+                                    onPressed: () {},
+                                  ),
+                                ),
+                            ),
+                          ],
                         ),
                       ),
-                      SizedBox(height: 4),
-                      Text(
-                        "You have 5 targets",
-                        style: TextStyle(fontSize: 13, color: Colors.grey),
+
+                      const SizedBox(height: 55),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          const Text(
+                            "Your Targets",
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 15,
+                            ),
+                          ),
+                          IconButton(
+                            icon: const Icon(
+                              Icons.navigate_next,
+                              color: Colors.grey,
+                            ),
+                            onPressed: () {},
+                            iconSize: 20,
+                          ),
+                        ],
                       ),
                     ],
                   ),
-                  ShadAvatar(
-                    'https://app.requestly.io/delay/2000/avatars.githubusercontent.com/u/124599?v=4',
-                    placeholder: Text('CN'),
-                  ),
-                ],
-              ),
-              SizedBox(height: 40),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    "Your Targets",
-                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 13),
-                  ),
-                  Icon(Icons.navigate_next, color: Colors.grey, size: 20),
-                ],
-              ),
-              SizedBox(height: 15),
-              CardScrollView(),
-            ],
+                ),
+                Padding(
+                  padding: EdgeInsets.only(left: 20),
+                  child: CardScrollView(),
+                ),
+              ],
+            ),
           ),
-        ),
+        ],
       ),
+
       bottomNavigationBar: AppBottomBar(),
     );
   }
