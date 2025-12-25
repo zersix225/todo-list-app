@@ -28,7 +28,7 @@ class _CardItemState extends State<CardItem> {
                 decoration: BoxDecoration(
                   border: Border(
                     bottom: BorderSide(
-                      color: Colors.grey.withValues(alpha: .5),
+                      color: Colors.grey.withValues(alpha: 0.5),
                       width: 0.5,
                     ),
                   ),
