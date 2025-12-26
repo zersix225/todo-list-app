@@ -14,8 +14,8 @@ class _CardScrollViewState extends State<CardScrollView> {
     return LayoutBuilder(
       builder: (context, constraints) {
         return SizedBox(
-          height: 80,
           width: constraints.maxWidth,
+          height: 115,
           child: ListView(
             scrollDirection: Axis.horizontal,
             children: [

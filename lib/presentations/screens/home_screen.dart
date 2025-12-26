@@ -27,7 +27,7 @@ class HomeScreen extends StatelessWidget {
             child: Column(
               children: [
                 Padding(
-                  padding: const EdgeInsets.only(left: 20, right: 20, top: 20),
+                  padding: const EdgeInsets.only(left: 20, right: 20, top: 35),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -68,22 +68,22 @@ class HomeScreen extends StatelessWidget {
                               ],
                             ),
                             Container(
-                              height: 45,
-                              width: 45,
+                              height: 40,
+                              width: 40,
                               decoration: BoxDecoration(
                                 color: Colors.white,
                                 shape: BoxShape.circle,
                               ),
                               child: Center(
-                                  child: IconButton(
-                                    icon: const Icon(
-                                      Icons.notifications_active,
-                                      color: Colors.black,
-                                    ),
-                                    iconSize: 20,
-                                    onPressed: () {},
+                                child: IconButton(
+                                  icon: const Icon(
+                                    Icons.notifications_active,
+                                    color: Colors.black,
                                   ),
+                                  iconSize: 20,
+                                  onPressed: () {},
                                 ),
+                              ),
                             ),
                           ],
                         ),
@@ -116,6 +116,61 @@ class HomeScreen extends StatelessWidget {
                 Padding(
                   padding: EdgeInsets.only(left: 20),
                   child: CardScrollView(),
+                ),
+
+                const SizedBox(height: 30),
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 20),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const Text(
+                        "Today's Task",
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 15,
+                        ),
+                      ),
+
+                      LayoutBuilder(
+                        builder: (context, constraints) {
+                          return Row(
+                            children: [
+                              ShadCard(
+                                width: constraints.maxWidth,
+                                radius: BorderRadius.circular(20),
+                                padding: const EdgeInsets.all(15),
+                                child: Row(
+                                  children: [
+                                    Column(
+                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      children: [
+                                        Text(
+                                          "Task Maneger web app",
+                                          style: TextStyle(
+                                            fontWeight: FontWeight.bold,
+                                            fontSize: 13,
+                                          ),
+                                        ),
+                                        SizedBox(height: 2),
+                                        Text(
+                                          "App re-design",
+                                          style: TextStyle(
+                                            fontSize: 10,
+                                            color: Colors.grey,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ],
+                          );
+                        },
+                      ),
+                    ],
+                  ),
                 ),
               ],
             ),
