@@ -9,6 +9,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return ShadApp(
       home: HomeScreen(),
+      theme: ShadThemeData(
+        textTheme: ShadTextTheme(
+          family: 'Roboto',
+        ),
+      ),
     );
   }
 }
