@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:shadcn_ui/shadcn_ui.dart';
 import 'package:todo_list/presentations/widgets/app_bar/app_bottom_bar.dart';
 import 'package:todo_list/presentations/widgets/card_view/card_scroll_view.dart';
+import 'package:todo_list/presentations/widgets/card_view/card_task.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -131,44 +132,8 @@ class HomeScreen extends StatelessWidget {
                           fontSize: 15,
                         ),
                       ),
-
-                      LayoutBuilder(
-                        builder: (context, constraints) {
-                          return Row(
-                            children: [
-                              ShadCard(
-                                width: constraints.maxWidth,
-                                radius: BorderRadius.circular(20),
-                                padding: const EdgeInsets.all(15),
-                                child: Row(
-                                  children: [
-                                    Column(
-                                      crossAxisAlignment: CrossAxisAlignment.start,
-                                      children: [
-                                        Text(
-                                          "Task Maneger web app",
-                                          style: TextStyle(
-                                            fontWeight: FontWeight.bold,
-                                            fontSize: 13,
-                                          ),
-                                        ),
-                                        SizedBox(height: 2),
-                                        Text(
-                                          "App re-design",
-                                          style: TextStyle(
-                                            fontSize: 10,
-                                            color: Colors.grey,
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ],
-                          );
-                        },
-                      ),
+                      SizedBox(height: 13),
+                      CardTask(),
                     ],
                   ),
                 ),

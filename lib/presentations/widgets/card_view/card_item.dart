@@ -16,18 +16,16 @@ class _CardItemState extends State<CardItem> {
     return Padding(
       padding: const EdgeInsets.only(right: 12),
       child: SizedBox(
-        width: 260,
+        width: 250,
         child: ShadCard(
           radius: BorderRadius.circular(20),
           padding: const EdgeInsets.all(15),
-          columnMainAxisAlignment: MainAxisAlignment.center,
           child: SizedBox.expand(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Container(
-                  padding: const EdgeInsets.only(bottom: 5),
                   // decoration: BoxDecoration(
                   //   border: Border(
                   //     bottom: BorderSide(
@@ -98,7 +96,7 @@ class _CardItemState extends State<CardItem> {
                 //     ),
                 //   ],
                 // ),
-                const SizedBox(height: 10),
+                const Spacer(), 
                 Row(
                   children: [
                     Expanded(
