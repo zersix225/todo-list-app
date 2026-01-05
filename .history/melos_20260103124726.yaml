@@ -1,8 +1,0 @@
-name: todo_list_app
-
-packages:
-  - package/*
-
-scripts:
-  analyze:
-    exec: dart analyze
