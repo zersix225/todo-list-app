@@ -20,5 +20,4 @@ melos:
       run: |
         open -a Simulator
         melos exec --flutter --scope=frontend -- flutter run --debug
-    dev:backend:
-      run:  melos exec --scope=backend -- ./mvnw spring-boot:run
+    dev

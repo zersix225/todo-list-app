@@ -15,10 +15,7 @@ melos:
   scripts:
     analyze:
       run: melos exec -- dart analyze .
-
     dev:frontend:
       run: |
-        open -a Simulator
-        melos exec --flutter --scope=frontend -- flutter run --debug
-    dev:backend:
-      run:  melos exec --scope=backend -- ./mvnw spring-boot:run
+        open -a Sim
+        melos exec --flutter --scope=frontend -- flutter run

@@ -1,0 +1,10 @@
+name: todo_list_app
+
+environment:
+  sdk: ^3.9.0
+
+dev_dependencies:
+  melos: ^7.0.0
+
+workspace:
+  - packages/frontend

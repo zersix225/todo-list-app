@@ -1,0 +1,14 @@
+name: todo_list_app
+
+packages:
+  - packages/frontend
+  - packages/backend
+  - packages/shared
+
+scripts:
+  analyze:
+    run: melos exec -- dart analyze .
+  dev:frontend:
+    run: |
+      open -a Simulator
+      melos exec --flutter --scope=frontend -- flutter run --debug

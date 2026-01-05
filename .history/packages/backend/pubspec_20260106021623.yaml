@@ -1,0 +1,16 @@
+name: backend
+
+description: "A new Spring boot project."
+resolution: workspace
+
+publish_to: 'none' 
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.9.2
+
+
+dependencies:
+  shared: 1.0.0
+  

@@ -4,7 +4,7 @@ environment:
   sdk: ^3.9.0
 
 dev_dependencies:
-  melos: ^7.0.0
+  melos: ^7.0.0-dev.9
 
 workspace:
   - packages/frontend
@@ -15,10 +15,10 @@ melos:
   scripts:
     analyze:
       run: melos exec -- dart analyze .
-
     dev:frontend:
       run: |
-        open -a Simulator
-        melos exec --flutter --scope=frontend -- flutter run --debug
-    dev:backend:
-      run:  melos exec --scope=backend -- ./mvnw spring-boot:run
+        
+
+        melos exec --flutter --scope=frontend -- flutter run
+
+
