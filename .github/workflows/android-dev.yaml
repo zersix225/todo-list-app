@@ -32,7 +32,9 @@ jobs:
           key: gradle-${{ runner.os }}-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
 
       - name: Install dependencies
+        working-directory: packages/frontend
         run: flutter pub get
 
       - name: Build APK
+        working-directory: packages/frontend
         run: flutter build apk --debug --build-name=1.0.0 --build-number=1

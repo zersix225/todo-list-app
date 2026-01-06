@@ -19,13 +19,16 @@ jobs:
           flutter-version: 3.35.4
       
       - name: Install dependencies
+        working-directory: packages/frontend
         run: flutter pub get
 
       - name: Install iOS dependencies
+        working-directory: packages/frontend
         run: |
           cd iOS
           pod install --repo-update
           cd ..
 
       - name: Build iOS
+        working-directory: packages/frontend
         run: flutter build ipa --debug --build-name=1.0.0 --build-number=1 --no-codesign
